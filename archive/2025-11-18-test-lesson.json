@@ -1,0 +1,16 @@
+{
+  "title": "Test lesson",
+  "date": "2025-11-18",
+  "context": "Quick smoke test for the archive API.",
+  "category": "Tutorial / Concept",
+  "keyIdea": "Confirm that the API writes to GitHub.",
+  "commands": "echo \"hello\"",
+  "explanation": "Simple test to ensure everything is wired correctly.",
+  "reusabilityNotes": {
+    "whenToReuse": "Only needed when testing the archive pipeline.",
+    "pitfalls": "None."
+  },
+  "uniquenessTag": "Uniqueness: New",
+  "storedBy": "lesson-archive-api",
+  "storedAt": "2025-11-18T16:16:22.766Z"
+}
