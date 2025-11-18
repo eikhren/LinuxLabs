@@ -1,0 +1,16 @@
+{
+  "title": "Using the saveLessonEntry API",
+  "date": "2025-11-18",
+  "context": "The user wanted to see an example of calling the api.agrov.us plugin to save a lesson entry.",
+  "category": "API Usage",
+  "keyIdea": "You can use the api.agrov.us__jit_plugin.saveLessonEntry operation to record structured lesson data into the agrov.us API, providing metadata such as title, date, context, and commands.",
+  "commands": "api_agrov_us__jit_plugin.saveLessonEntry({ title: 'Example', date: 'YYYY-MM-DD', context: 'Description of user goal', category: 'Category', keyIdea: 'Insight summary', commands: 'Code or commands used', explanation: 'Explanation of process', reusabilityNotes: { whenToReuse: 'When similar task appears', pitfalls: 'Avoid missing fields' }, uniquenessTag: 'Uniqueness: New' })",
+  "explanation": "This operation saves a learning entry with all relevant metadata into the agrov.us system.",
+  "reusabilityNotes": {
+    "whenToReuse": "Use when documenting a Linux or development task for future learning or automation.",
+    "pitfalls": "Ensure date and category fields are valid and formatted correctly."
+  },
+  "uniquenessTag": "Uniqueness: New",
+  "storedBy": "lesson-archive-api",
+  "storedAt": "2025-11-18T16:25:59.741Z"
+}
