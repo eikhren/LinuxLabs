@@ -1,0 +1,16 @@
+{
+  "title": "Sample Lesson Entry",
+  "date": "2025-11-19",
+  "context": "Demonstrating the api.agrov.us saveLessonEntry operation using a LinuxLabs study assistant.",
+  "category": "Tutorial / Concept",
+  "keyIdea": "The saveLessonEntry API operation persists structured Linux lessons to a remote repository for future retrieval and study.",
+  "commands": "echo 'Example command to demonstrate lesson saving'",
+  "explanation": "This example shows how to call the saveLessonEntry operation from within a LinuxLabs GPT to persist a formatted study entry.",
+  "reusabilityNotes": {
+    "whenToReuse": "Use this pattern whenever you want to record a Linux study session into the Lesson Archive Repository.",
+    "pitfalls": "Ensure the JSON fields match the expected schema; incorrect field names will cause the API to reject the entry."
+  },
+  "uniquenessTag": "Uniqueness: New",
+  "storedBy": "lesson-archive-api",
+  "storedAt": "2025-11-19T10:01:34.362Z"
+}
