@@ -1,0 +1,16 @@
+{
+  "title": "Using /srv for a Personal Developer Repository Bank",
+  "date": "2025-11-19",
+  "context": "As a solo developer, I decided to use /srv/ as the root for my local repository bank because it aligns with professional system administration standards.",
+  "category": "Configuration Trick",
+  "keyIdea": "/srv is a valid and standards-compliant location for service or project data according to the Filesystem Hierarchy Standard (FHS). Even as a personal developer, using /srv/dev-repos provides a professional and organized directory structure for version-controlled projects.",
+  "commands": "```bash\n# Create the central repository directory under /srv\nsudo mkdir -p /srv/dev-repos/{personal,work,open-source,archive}\n\n# Set ownership to current user for easier management\nsudo chown -R $USER:$USER /srv/dev-repos\n\n# Optionally, create a group for future scalability\nsudo groupadd developers\nsudo usermod -aG developers $USER\nsudo chown -R root:developers /srv/dev-repos\nsudo chmod -R 2775 /srv/dev-repos\n\n# Set environment variable for convenience\necho 'export DEV_REPOS=/srv/dev-repos' >> ~/.bashrc\necho \"alias cdrepo='cd $DEV_REPOS'\" >> ~/.bashrc\nsource ~/.bashrc\n```",
+  "explanation": "Even for personal setups, using /srv for a developer repository bank adds consistency with professional Linux filesystem conventions. It also simplifies transitioning to multi-user or server environments later on, since /srv is recognized as a standard data service directory.",
+  "reusabilityNotes": {
+    "whenToReuse": "Use this structure when setting up a personal or multi-user system where development repositories should be centrally located and managed with consistent permissions.",
+    "pitfalls": "Ensure correct permissions and group ownership. Avoid running user applications as root inside /srv. Always use chmod 2775 to preserve group inheritance for shared directories."
+  },
+  "uniquenessTag": "Uniqueness: New",
+  "storedBy": "lesson-archive-api",
+  "storedAt": "2025-11-19T13:21:07.358Z"
+}
