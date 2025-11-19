@@ -1,0 +1,16 @@
+{
+  "title": "Saving a Linux Lesson Entry via API",
+  "date": "2025-11-19",
+  "context": "Demonstrating how to call the api.agrov.us API using the saveLessonEntry operation to persist a Linux lesson.",
+  "category": "Workflow",
+  "keyIdea": "The saveLessonEntry action is used to persist LinuxLab lesson metadata and content to the Lesson Archive Repository for long-term reference.",
+  "commands": "# Example API call (performed automatically by LinuxLabs)\napi_agrov_us__jit_plugin.saveLessonEntry({\n  title: \"Saving a Linux Lesson Entry via API\",\n  date: \"2025-11-19\",\n  context: \"Demonstrating API usage to persist lessons\",\n  category: \"Workflow\",\n  keyIdea: \"Persists lesson data into the archive repository.\",\n  commands: \"# see LinuxLabs system spec for structure\",\n  explanation: \"This stores structured learning entries for Linux practice sessions.\",\n  reusabilityNotes: {\n    whenToReuse: \"Whenever a new Linux concept or problem-solving session is completed.\",\n    pitfalls: \"Ensure the entry fields are complete and formatted correctly before saving.\"\n  },\n  uniquenessTag: \"Uniqueness: New\"\n})",
+  "explanation": "This example shows a valid use of the saveLessonEntry Action in the LinuxLabs system. It stores structured learning metadata, including title, context, commands, and explanation.",
+  "reusabilityNotes": {
+    "whenToReuse": "Use when archiving completed Linux study lessons or troubleshooting sessions.",
+    "pitfalls": "Ensure all required fields are filled correctly, and do not include Markdown formatting inside JSON strings."
+  },
+  "uniquenessTag": "Uniqueness: New",
+  "storedBy": "lesson-archive-api",
+  "storedAt": "2025-11-19T09:11:00.771Z"
+}
