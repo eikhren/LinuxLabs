@@ -1,0 +1,16 @@
+{
+  "title": "Using curl to Send JSON Data to an API",
+  "date": "2025-11-19",
+  "context": "The user wanted to learn how to send a POST request with JSON data to a REST API using curl.",
+  "category": "Linux Networking",
+  "keyIdea": "You can use curl's -X POST and -H 'Content-Type: application/json' options along with -d to send JSON payloads to an API endpoint.",
+  "commands": "curl -X POST https://api.example.com/data \\\n  -H 'Content-Type: application/json' \\\n  -d '{\"key\":\"value\"}'",
+  "explanation": "This command sends a POST request to the specified API endpoint with JSON data in the request body. The -H flag ensures the server interprets the data correctly.",
+  "reusabilityNotes": {
+    "whenToReuse": "Whenever you need to interact with an API that accepts JSON POST requests.",
+    "pitfalls": "Always escape quotes correctly inside JSON strings and make sure the Content-Type header matches the data format."
+  },
+  "uniquenessTag": "Uniqueness: New",
+  "storedBy": "lesson-archive-api",
+  "storedAt": "2025-11-19T07:06:15.747Z"
+}
