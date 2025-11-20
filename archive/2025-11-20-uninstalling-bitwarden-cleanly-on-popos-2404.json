@@ -1,0 +1,16 @@
+{
+  "title": "Uninstalling Bitwarden Cleanly on Pop!_OS 24.04",
+  "date": "2025-11-20",
+  "context": "After upgrading Pop!_OS from 22.04 to 24.04, Bitwarden stopped launching correctly. The goal was to uninstall it completely using the terminal.",
+  "category": "Troubleshooting",
+  "keyIdea": "Determine whether Bitwarden is installed via apt, Flatpak, or Snap, and use the correct removal method to avoid leftover configs or dependency issues.",
+  "commands": "# Detect installation method\napt list --installed | grep -i bitwarden\nflatpak list | grep -i bitwarden\nsnap list | grep -i bitwarden\n\n# Uninstall (APT)\nsudo apt remove --purge bitwarden\nsudo apt autoremove\n\n# Uninstall (Flatpak)\nflatpak uninstall com.bitwarden.desktop\nflatpak uninstall --unused\n\n# Uninstall (Snap)\nsudo snap remove bitwarden\n\n# Clean up configs (optional)\nrm -rf ~/.config/Bitwarden\nrm -rf ~/.var/app/com.bitwarden.desktop",
+  "explanation": "System upgrades can break GUI app integrations. Bitwarden can exist under multiple package systems. Detecting and removing the right one ensures no partial installations remain.",
+  "reusabilityNotes": {
+    "whenToReuse": "Reuse this process for any app behaving oddly after a major upgrade.",
+    "pitfalls": "Be cautious with `rm -rf` — always double-check paths before removing configs."
+  },
+  "uniquenessTag": "Uniqueness: New",
+  "storedBy": "lesson-archive-api",
+  "storedAt": "2025-11-20T04:55:32.769Z"
+}
