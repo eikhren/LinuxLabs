@@ -1,0 +1,16 @@
+{
+  "title": "Cleaning Flatpak and User-Level Bitwarden Remnants After Uninstall",
+  "date": "2025-11-20",
+  "context": "After uninstalling Bitwarden on Pop!_OS 24.04, several Flatpak metadata and icon files were found in system and user directories.",
+  "category": "Troubleshooting",
+  "keyIdea": "Flatpak often leaves small metadata traces after uninstalling apps. These can be safely removed from /var/lib/flatpak and ~/.local/share/flatpak without affecting other applications.",
+  "commands": "# Clean dangling Flatpak entries\nsudo flatpak uninstall --unused\n\n# Remove app data and overrides\nsudo rm -rf /var/lib/flatpak/app/com.bitwarden.desktop\nsudo rm -rf /var/lib/flatpak/overrides/com.bitwarden.desktop\nsudo rm -rf ~/.local/share/flatpak/app/com.bitwarden.desktop\nsudo rm -rf ~/.local/share/flatpak/overrides/com.bitwarden.desktop\n\n# Remove appstream metadata/icons\nsudo find /var/lib/flatpak/appstream -iname '*bitwarden*' -exec sudo rm -rf {} +\nfind ~/.local/share/flatpak/appstream -iname '*bitwarden*' -exec rm -rf {} +\n\n# Securely delete exported vault\nshred -u ~/Downloads/bitwarden_export_20251119162149.zip",
+  "explanation": "Even after uninstalling Flatpak apps, residual metadata, icons, and override files may persist. Cleaning these directories restores a truly clean system state. Sensitive vault exports should be securely shredded.",
+  "reusabilityNotes": {
+    "whenToReuse": "Use this process for any Flatpak application with lingering data.",
+    "pitfalls": "Always confirm filenames before running rm -rf or shred to avoid deleting unrelated files."
+  },
+  "uniquenessTag": "Uniqueness: New",
+  "storedBy": "lesson-archive-api",
+  "storedAt": "2025-11-20T05:55:34.265Z"
+}
