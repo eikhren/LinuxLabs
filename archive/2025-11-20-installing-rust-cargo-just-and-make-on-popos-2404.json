@@ -1,0 +1,16 @@
+{
+  "title": "Installing Rust, Cargo, Just, and Make on Pop!_OS 24.04",
+  "date": "2025-11-20",
+  "context": "Setting up a development environment for Rust on Pop!_OS 24.04, including cargo, rustc, just, and make.",
+  "category": "Workflow",
+  "keyIdea": "Use rustup for Rust installation (stable channel), cargo install for just, and system packages for Make and build tools to ensure full compatibility with Rust crates.",
+  "commands": "sudo apt update && sudo apt upgrade -y\n\nsudo apt install -y build-essential make curl pkg-config libssl-dev\n\ncurl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh\nsource \"$HOME/.cargo/env\"\n\nrustc --version\ncargo --version\n\ncargo install just\n# or alternatively\n# sudo apt install -y just\n\nrustup show\njust --version\nmake --version",
+  "explanation": "The rustup installer handles toolchain management and ensures the stable Rust version is installed cleanly. Using cargo install just ensures the latest version of just compatible with your Rust setup. System packages (build-essential, make) are necessary for building Rust crates with native dependencies.",
+  "reusabilityNotes": {
+    "whenToReuse": "Reuse this setup on any Ubuntu-based distro (22.04, 24.04, Pop!_OS, Mint).",
+    "pitfalls": "Beware: if cargo or rustc are installed via apt, they may be outdated; prefer rustup."
+  },
+  "uniquenessTag": "Uniqueness: New",
+  "storedBy": "lesson-archive-api",
+  "storedAt": "2025-11-20T00:08:51.307Z"
+}
