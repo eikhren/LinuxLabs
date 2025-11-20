@@ -1,0 +1,16 @@
+{
+  "title": "Installing a minimal but full KDE Plasma on Pop!_OS 24.04 Beta",
+  "date": "2025-11-20",
+  "context": "I wanted to install a lean but functional KDE Plasma desktop environment on Pop!_OS 24.04 Beta (Ubuntu 24.04 based) via the terminal.",
+  "category": "Tutorial / Concept",
+  "keyIdea": "Use the `kde-plasma-desktop` package to get core Plasma desktop without bloating full KDE apps, select `sddm` as display manager, and update/upgrade before and after.",
+  "commands": "sudo apt update\nsudo apt upgrade\nsudo apt install kde-plasma-desktop\n# select sddm when prompted\nsudo reboot\n# (optional) install more KDE apps:\nsudo apt install kde-standard",
+  "explanation": "Updating ensures your system basis (Pop!_OS) is current. Installing `kde-plasma-desktop` adds the Plasma environment and core utilities but avoids the full suite of KDE applications (like complete office, media etc). `sddm` is KDE’s preferred session/login manager. Rebooting allows you to select the Plasma session in login and start using KDE.",
+  "reusabilityNotes": {
+    "whenToReuse": "Use when you are on an Ubuntu derivative (or Pop!_OS) and want to switch to KDE without full app suite.",
+    "pitfalls": "Installing desktops can lead to duplicated apps, possible theme/setting conflicts — be aware when switching between DEs. On Beta releases or non‑standard hardware (e.g., NVIDIA GPUs) check driver and session (Wayland vs X11) compatibility."
+  },
+  "uniquenessTag": "Uniqueness: New",
+  "storedBy": "lesson-archive-api",
+  "storedAt": "2025-11-20T01:46:29.657Z"
+}
