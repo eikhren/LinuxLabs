@@ -1,0 +1,16 @@
+{
+  "title": "Setting CPU Niceness for a Specific Application Using a Wrapper Script",
+  "date": "2025-11-25",
+  "context": "User wanted to ensure specific applications always start with a defined CPU scheduling priority without altering global settings.",
+  "category": "System Administration",
+  "keyIdea": "Use a simple wrapper script that launches the desired binary under a given niceness level, allowing per-application CPU priority tuning without root access or system-wide changes.",
+  "commands": "mkdir -p ~/.local/bin\nnano ~/.local/bin/<appname>-wrapper\n# Example wrapper content:\n#!/bin/bash\nexec nice -n -10 /usr/bin/<app-binary> \"$@\"\n\nchmod +x ~/.local/bin/<appname>-wrapper\n# Then configure launcher or runtime to use this wrapper",
+  "explanation": "The wrapper uses `nice` to set a predefined CPU scheduling priority when launching an application. This provides fine-grained control for performance tuning or workload isolation without editing system limits or using root privileges.",
+  "reusabilityNotes": {
+    "whenToReuse": "Apply when you need to adjust CPU priority for a single app—games, compilers, or background tasks—without affecting the rest of the system.",
+    "pitfalls": "Avoid extremely low niceness values without root permissions; check that the wrapper is executable and properly referenced in your launcher or config."
+  },
+  "uniquenessTag": "Related to: \"Set PolyMC Minecraft niceness to -10 via wrapper\"",
+  "storedBy": "lesson-archive-api",
+  "storedAt": "2025-11-25T15:58:28.000Z"
+}
