@@ -1,0 +1,16 @@
+{
+  "title": "CLI OTP Authenticator Setup for SpigotMC.org",
+  "date": "2025-11-26",
+  "context": "Configured a new encrypted OTP authenticator for SpigotMC.org using oathtool and pass with a freshly generated GPG key after removing old keys.",
+  "category": "Security",
+  "keyIdea": "Use a freshly generated GPG key with pass to securely encrypt and store a SpigotMC.org OTP secret, enabling offline code generation with oathtool.",
+  "commands": "gpg --full-generate-key\ngpg --list-keys\npass init 7C7198C81A4B487998DE36E2962ECC3452A93516\npass insert otp/spigotmc.org\n# Paste: BR4VZWHVHE5AXZMW\noathtool --totp -b \"$(pass otp/spigotmc.org)\"",
+  "explanation": "This setup establishes a secure, offline OTP authenticator for SpigotMC.org using oathtool and pass. The secret is encrypted under a GPG key, ensuring it stays local and private while allowing quick TOTP generation from the command line.",
+  "reusabilityNotes": {
+    "whenToReuse": "Whenever setting up a new 2FA service on Linux that supports TOTP and needs secure local storage under GPG.",
+    "pitfalls": "Losing the GPG private key makes OTP secrets unrecoverable. Always back up ~/.gnupg and ~/.password-store."
+  },
+  "uniquenessTag": "Uniqueness: New",
+  "storedBy": "lesson-archive-api",
+  "storedAt": "2025-11-26T13:49:08.816Z"
+}
