@@ -1,0 +1,16 @@
+{
+  "title": "Installing BioShock 2 Remastered HD Texture Pack via TFC Installer in Wine",
+  "date": "2025-12-18",
+  "context": "User on KDE Neon 24.04 used Wine to install and configure the Unreal 2/3 TFC Installer, applying the HD Texture Pack mod for BioShock 2 Remastered through both Wine GUI and shell automation.",
+  "category": "Gaming / Wine Setup",
+  "keyIdea": "A Wine-based TFC Installer setup can apply HD texture mods by combining .NET runtime installation, prefix management, and direct file operations that modify the game’s data directory used by Steam.",
+  "commands": "# Initialize Wine prefix\nexport WINEPREFIX=$HOME/.wine-tfc\nwineboot --init\nwinetricks -q corefonts vcrun2019\n\n# Install .NET 6 runtime under Wine\nwine /home/eikhren/Downloads/windowsdesktop-runtime-6.0.36-win-x64.exe\n\n# Launch TFC Installer manually\nWINEPREFIX=$HOME/.wine-tfc wine \"/home/eikhren/Downloads/TFCInstaller/TFCInstaller.exe\"\n\n# Copy HD texture mod files into BioShock 2 directory\ncp -v /home/eikhren/Downloads/HD\\ Texture\\ Pack\\ v1.0/* /home/eikhren/.local/share/Steam/steamapps/common/BioShock\\ 2\\ Remastered/Build/Final/",
+  "explanation": "The modding process combines Wine-based execution of the TFC Installer and Linux-level file management. Once the HD texture pack files are copied into the BioShock 2 directory, Steam can launch the modded game natively without rerunning the installer.",
+  "reusabilityNotes": {
+    "whenToReuse": "Whenever a Windows-only mod installer must be used on Linux systems for games installed through Steam or Lutris, particularly those requiring .NET runtimes or file-level modding.",
+    "pitfalls": "Avoid running Steam’s file verification afterward, as it may overwrite the modded files. Always back up original assets before replacing them with modded ones."
+  },
+  "uniquenessTag": "Uniqueness: New",
+  "storedBy": "lesson-archive-api",
+  "storedAt": "2025-12-18T22:16:47.814Z"
+}
