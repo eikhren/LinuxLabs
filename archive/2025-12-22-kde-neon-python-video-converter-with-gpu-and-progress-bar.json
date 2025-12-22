@@ -1,0 +1,16 @@
+{
+  "title": "KDE Neon Python Video Converter with GPU and Progress Bar",
+  "date": "2025-12-22",
+  "context": "User developed a Python helper script on KDE Neon to batch convert MP4 files into WebM format using ffmpeg, with GPU acceleration and a real-time progress bar.",
+  "category": "Linux Multimedia Tools",
+  "keyIdea": "Automate MP4-to-WebM conversion using ffmpeg with dynamic bitrate, GPU acceleration (VAAPI/NVENC), and visual progress reporting via rich library.",
+  "commands": "sudo apt install ffmpeg python3-pip\npip install rich tqdm\npython3 webmshrink.py --target 50 --gpu",
+  "explanation": "This helper script automates the conversion of large MP4 videos into smaller WebM files. It calculates optimal bitrates for target size, supports hardware acceleration, and provides visual feedback through a progress bar. The script monitors ffmpeg's stderr output for timestamps to report progress accurately.",
+  "reusabilityNotes": {
+    "whenToReuse": "Whenever you need an automated and GPU-accelerated video compression pipeline on a Linux system using ffmpeg.",
+    "pitfalls": "Ensure ffmpeg supports the desired hardware encoders (vaapi/nvenc) and verify driver installation; incorrect buffer sizes or missing encoders can cause truncated output."
+  },
+  "uniquenessTag": "Uniqueness: New",
+  "storedBy": "lesson-archive-api",
+  "storedAt": "2025-12-22T20:35:02.727Z"
+}
